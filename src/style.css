@@ -1,0 +1,137 @@
+:root {
+  --pink-50: #fff5f8;
+  --pink-100: #ffe4ec;
+  --pink-200: #ffc8d9;
+  --pink-400: #ff8fb1;
+  --pink-500: #f7699a;
+  --pink-600: #e04f82;
+  --text: #5a3d4a;
+  --text-soft: #9a7685;
+  --card: #ffffff;
+  --shadow: 0 12px 40px rgba(224, 79, 130, 0.18);
+  --radius: 24px;
+
+  font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', system-ui, sans-serif;
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: linear-gradient(160deg, var(--pink-50) 0%, var(--pink-100) 55%, #ffeef3 100%);
+  overflow-x: hidden;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn {
+  padding: 12px 28px;
+  border-radius: 999px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+.btn-primary {
+  background: var(--pink-500);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(247, 105, 154, 0.4);
+}
+
+.btn-primary:hover {
+  background: var(--pink-600);
+}
+
+.btn-primary:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.btn-ghost {
+  background: #fff;
+  color: var(--text-soft);
+  border: 2px solid var(--pink-200);
+}
+
+.card {
+  width: 100%;
+  max-width: 440px;
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 36px 28px;
+  text-align: center;
+}
+
+.title {
+  margin: 0 0 8px;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin: 0 0 24px;
+  color: var(--text-soft);
+}
+
+/* 選項卡片網格（StepCity / StepFood 共用） */
+.option-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 18px 8px;
+  background: var(--pink-50);
+  border: 2px solid transparent;
+  border-radius: 18px;
+  color: var(--text);
+  transition: transform 0.15s ease, border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.option:hover {
+  transform: translateY(-3px);
+}
+
+.option.active {
+  background: #fff;
+  border-color: var(--pink-400);
+  box-shadow: 0 0 0 4px rgba(255, 143, 177, 0.25), 0 6px 16px rgba(247, 105, 154, 0.2);
+}
+
+.option-emoji {
+  font-size: 2.4rem;
+  line-height: 1;
+}
+
+.option-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
